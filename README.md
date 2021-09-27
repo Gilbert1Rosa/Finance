@@ -3,10 +3,10 @@
 
 Backend application for personal finance.
 
-##Instructions
+## Instructions
 
-###Build
+### Build
 
-To build the project execute:
+To build (without the tests) the project execute:
 
-> gradlew bootJar
+> gradle build -x test
