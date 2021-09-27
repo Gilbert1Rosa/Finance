@@ -1,7 +1,7 @@
-# video-backend
+# Finance Backend
 
 
-Backend application for uploading and streaming videos.
+Backend application for personal finance.
 
 ##Instructions
 
