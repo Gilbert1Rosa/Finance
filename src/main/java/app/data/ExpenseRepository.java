@@ -23,13 +23,13 @@ public interface ExpenseRepository extends JpaRepository<Expense, String> {
     List<Expense> getExpensesByCategory(String category, int limit, int offset);
 
     @Query(value = "SELECT category, SUM(total_amount) as 'total' FROM todays_expenses GROUP BY Category", nativeQuery = true)
-    Map<String, Object> getTodayExpensesCategorySummary();
+    List<Map<String, Object>> getTodayExpensesCategorySummary();
 
     @Query(value = "SELECT category, SUM(total_amount) as 'total' FROM month_expenses GROUP BY Category", nativeQuery = true)
-    Map<String, Object> getMonthExpensesCategorySummary();
+    List<Map<String, Object>> getMonthExpensesCategorySummary();
 
     @Query(value = "SELECT category, SUM(total_amount) as 'total' FROM year_expenses GROUP BY Category", nativeQuery = true)
-    Map<String, Object> getYearExpensesCategorySummary();
+    List<Map<String, Object>> getYearExpensesCategorySummary();
 
     @Query(value = "SELECT COUNT(*) FROM Expenses", nativeQuery = true)
     int getTotalExpenses();
